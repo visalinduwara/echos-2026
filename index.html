@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ECHOS 2026 | Sri Mahinda Maha Vidyalaya</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Background -->
+  <div class="bg">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="brand">
+      <img src="logo.svg" alt="ECHOS 2026 Logo">
+      <span>ECHOS <b>2026</b></span>
+    </div>
+
+    <a href="#register" class="nav-btn">Register</a>
+  </nav>
+
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <div class="logo-wrap">
+        <img src="logo.svg" alt="ECHOS 2026">
+      </div>
+
+      <p class="school">
+        R/EREPOLA SRI MAHINDA MAHA VIDYALAYA
+      </p>
+
+      <h1>
+        ECHOS <span>2026</span>
+      </h1>
+
+      <p class="subtitle">
+        2026 A/L BATCH × 2023 O/L BATCH
+      </p>
+
+      <p class="tagline">
+        One School. One Memory. One Night to Remember.
+      </p>
+
+      <!-- COUNTDOWN -->
+      <div class="countdown">
+
+        <div>
+          <strong id="days">00</strong>
+          <small>Days</small>
+        </div>
+
+        <div>
+          <strong id="hours">00</strong>
+          <small>Hours</small>
+        </div>
+
+        <div>
+          <strong id="minutes">00</strong>
+          <small>Minutes</small>
+        </div>
+
+        <div>
+          <strong id="seconds">00</strong>
+          <small>Seconds</small>
+        </div>
+
+      </div>
+
+      <a href="#register" class="main-btn">
+        JOIN THE ECHOS
+        <span>→</span>
+      </a>
+
+    </div>
+
+    <div class="scroll">
+      SCROLL TO EXPLORE
+      <span>↓</span>
+    </div>
+
+  </section>
+
+
+  <!-- EVENT DETAILS -->
+  <section class="section details" id="details">
+
+    <div class="section-title">
+      <span>THE EVENT</span>
+      <h2>Let's Make <b>Memories.</b></h2>
+    </div>
+
+    <div class="cards">
+
+      <div class="card">
+        <div class="icon">📅</div>
+        <h3>DATE</h3>
+        <p>29 NOVEMBER 2026</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">⏰</div>
+        <h3>TIME</h3>
+        <p>10:30 AM – 4:30 PM</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">📍</div>
+        <h3>VENUE</h3>
+        <p>KASHYAPA HOTEL<br>AVISSAWELLA</p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- BATCH -->
+  <section class="batch-section">
+
+    <div class="batch-content">
+
+      <span class="mini-title">THE GENERATIONS</span>
+
+      <h2>
+        TWO BATCHES.<br>
+        <span>ONE ECHOS.</span>
+      </h2>
+
+      <div class="batch-list">
+
+        <div class="batch">
+          <span>01</span>
+          <div>
+            <small>BATCH</small>
+            <h3>2026 A/L</h3>
+          </div>
+        </div>
+
+        <div class="batch">
+          <span>02</span>
+          <div>
+            <small>BATCH</small>
+            <h3>2023 O/L</h3>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- REGISTRATION -->
+  <section class="section register" id="register">
+
+    <div class="section-title">
+      <span>RESERVATION</span>
+      <h2>Reserve Your <b>Spot.</b></h2>
+      <p>Fill in your details to join ECHOS 2026.</p>
+    </div>
+
+    <form id="registrationForm">
+
+      <div class="input-row">
+
+        <div class="input-group">
+          <label>FULL NAME</label>
+          <input
+            type="text"
+            id="name"
+            placeholder="Your full name"
+            required
+          >
+        </div>
+
+        <div class="input-group">
+          <label>NICKNAME</label>
+          <input
+            type="text"
+            id="nickname"
+            placeholder="Your nickname"
+          >
+        </div>
+
+      </div>
+
+
+      <div class="input-row">
+
+        <div class="input-group">
+          <label>PHONE NUMBER</label>
+          <input
+            type="tel"
+            id="phone"
+            placeholder="07XXXXXXXX"
+            required
+          >
+        </div>
+
+        <div class="input-group">
+          <label>BATCH</label>
+
+          <select id="batch" required>
+            <option value="">Select your batch</option>
+            <option value="2026 A/L">2026 A/L Batch</option>
+            <option value="2023 O/L">2023 O/L Batch</option>
+          </select>
+
+        </div>
+
+      </div>
+
+
+      <div class="input-group">
+        <label>ARE YOU ATTENDING?</label>
+
+        <div class="radio-group">
+
+          <label class="radio">
+            <input type="radio" name="attendance" value="yes" required>
+            <span>YES, I'M COMING 🔥</span>
+          </label>
+
+          <label class="radio">
+            <input type="radio" name="attendance" value="no">
+            <span>NO, SORRY</span>
+          </label>
+
+        </div>
+
+      </div>
+
+
+      <div class="input-group">
+        <label>SPECIAL NOTE</label>
+
+        <textarea
+          id="note"
+          placeholder="Anything you want to tell us..."
+        ></textarea>
+
+      </div>
+
+
+      <button type="submit" class="submit-btn">
+        SUBMIT REGISTRATION
+        <span>→</span>
+      </button>
+
+    </form>
+
+
+    <!-- SUCCESS -->
+    <div class="success" id="success">
+
+      <div class="success-icon">✓</div>
+
+      <h2>YOU'RE IN!</h2>
+
+      <p>
+        Your registration has been received.
+      </p>
+
+      <div class="registration-id">
+        REGISTRATION ID<br>
+        <strong id="registrationId">ECHOS-0000</strong>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+  <section class="contact">
+
+    <span>QUESTIONS?</span>
+
+    <h2>
+      Talk to the <b>Team.</b>
+    </h2>
+
+    <div class="contacts">
+
+      <a href="https://wa.me/94767958307">
+        Visal
+      </a>
+
+      <a href="https://wa.me/94761065142">
+        Sithija
+      </a>
+
+      <a href="https://wa.me/94743267340">
+        Malsara
+      </a>
+
+      <a href="https://wa.me/94716629894">
+        Imashi
+      </a>
+
+      <a href="https://wa.me/94711632290">
+        Chamod
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <footer>
+
+    <img src="logo.svg" alt="ECHOS">
+
+    <p>
+      ECHOS 2026 © R/Erepola Sri Mahinda Maha Vidyalaya
+    </p>
+
+  </footer>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
