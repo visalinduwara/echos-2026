@@ -3,7 +3,6 @@
 const eventDate = new Date("November 29, 2026 10:30:00").getTime();
 
 function updateCountdown() {
-
   const now = new Date().getTime();
   const distance = eventDate - now;
 
@@ -16,6 +15,7 @@ function updateCountdown() {
   }
 
   const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
   const hours = Math.floor(
     (distance % (1000 * 60 * 60 * 24)) /
     (1000 * 60 * 60)
@@ -44,31 +44,76 @@ function updateCountdown() {
 }
 
 updateCountdown();
-
 setInterval(updateCountdown, 1000);
 
 
-// REGISTRATION
+// ECHOS 2026 REGISTRATION
 
 const form = document.getElementById("registrationForm");
 const success = document.getElementById("success");
 const registrationId = document.getElementById("registrationId");
 
-form.addEventListener("submit", function(e) {
+if (form) {
 
-  e.preventDefault();
+  form.addEventListener("submit", async function(e) {
 
-  const randomNumber = Math.floor(1000 + Math.random() * 9000);
+    e.preventDefault();
 
-  registrationId.innerText =
-    "ECHOS-2026-" + randomNumber;
+    // Generate registration number
+    const randomNumber =
+      Math.floor(1000 + Math.random() * 9000);
 
-  form.style.display = "none";
-  success.classList.add("show");
+    const regID =
+      "ECHOS-2026-" + randomNumber;
 
-  window.scrollTo({
-    top: success.offsetTop - 100,
-    behavior: "smooth"
+    // Collect form data
+    const formData = new FormData(form);
+
+    formData.append("Registration ID", regID);
+    formData.append("_subject", "New ECHOS 2026 Registration");
+
+    try {
+
+      const response = await fetch(
+        "https://formspree.io/f/mnpnvgka",
+        {
+          method: "POST",
+          body: formData,
+          headers: {
+            "Accept": "application/json"
+          }
+        }
+      );
+
+      if (response.ok) {
+
+        registrationId.innerText = regID;
+
+        form.style.display = "none";
+        success.classList.add("show");
+
+        window.scrollTo({
+          top: success.offsetTop - 100,
+          behavior: "smooth"
+        });
+
+      } else {
+
+        alert(
+          "Registration failed. Please try again."
+        );
+
+      }
+
+    } catch (error) {
+
+      alert(
+        "Something went wrong. Please check your internet connection."
+      );
+
+      console.error(error);
+    }
+
   });
 
-});
+}
